@@ -14,7 +14,7 @@ export class CatsService {
   ) {}
   
   create(createCatDto: CreateCatDto) {
-    return 'This action adds a new cat';
+    return this.catsRepository.insert(createCatDto);
   }
 
   findAll(): Promise<Cat[]> {
@@ -30,6 +30,6 @@ export class CatsService {
   }
 
   update(id: number, updateCatDto: UpdateCatDto) {
-    return `This action updates a #${id} cat`;
+    return this.catsRepository.update(id, updateCatDto);
   }
 }
