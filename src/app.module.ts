@@ -10,11 +10,11 @@ import { Cat } from './cats/entities/cat.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'example',
-      database: 'nest1',
+      host: process.env.RDS_HOSTNAME || 'localhost',
+      port: process.env.RDS_PORT || 5432,
+      database: process.env.RDS_DB_NAME || 'nest1',
+      username: process.env.RDS_USERNAME || 'postgres',
+      password: process.env.RDS_PASSWORD || 'example',
       entities: [Cat],
       synchronize: true,
     }),
