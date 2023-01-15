@@ -6,6 +6,9 @@ export class Cat {
     id: string;
   
     @Column()
+    name: string;
+
+    @Column()
     breed: string;
 
     @Column()
