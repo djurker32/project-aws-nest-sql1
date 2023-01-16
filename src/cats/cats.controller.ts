@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Public } from 'src/decorators/public.decorator';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
@@ -12,6 +13,7 @@ export class CatsController {
     return this.catsService.create(createCatDto);
   }
 
+  @Public()
   @Get()
   findAll() {
     return this.catsService.findAll();
