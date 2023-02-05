@@ -11,9 +11,9 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: 'mysql',
       host: process.env.RDS_HOSTNAME || 'localhost',
-      port: parseInt(process.env.RDS_PORT) || 5432,
+      port: parseInt(process.env.RDS_PORT) || 3306,
       database: process.env.RDS_DB_NAME || 'nest1',
       username: process.env.RDS_USERNAME || 'postgres',
       password: process.env.RDS_PASSWORD || 'example',
